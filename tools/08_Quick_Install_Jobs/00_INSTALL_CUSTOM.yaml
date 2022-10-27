@@ -137,7 +137,7 @@ spec:
                   train_models_snow: true
                   train_models_metrics: true
 
-                  training_data_url: https://github.com/niklaushirt/
+                  training_data_url: https://github.com/paulsorelli/
                   training_data_repo: cp4waiops-trainingdata
 
 
@@ -341,7 +341,7 @@ spec:
 
           env:
           - name: INSTALL_REPO
-            value : "https://github.com/niklaushirt/cp4waiops-deployer.git"
+            value : "https://github.com/paulsorelli/cp4waiops-deployer.git"
           - name: CONFIG
             #value : "./configs/cp4waiops-roks-aimanager-all-34.yaml"
             value : "./configs/cp4waiops-local-custom.yaml"

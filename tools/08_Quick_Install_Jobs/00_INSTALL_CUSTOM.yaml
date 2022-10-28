@@ -346,6 +346,10 @@ spec:
             #value : "./configs/cp4waiops-roks-aimanager-all-34.yaml"
             value : "./configs/cp4waiops-local-custom.yaml"
             # The pull token for cp.icr.com from https://myibm.ibm.com/products-services/containerlibrary
+          - name: WAIOPS_STORAGE_CLASS_FILE
+            value: "nfs-local-sc"
+          - name: WAIOPS_STORAGE_CLASS_BLOCK
+            value: "nfs-local-sc"                      
           - name: ENTITLED_REGISTRY_KEY
             value : "<REGISTRY_TOKEN>"
       restartPolicy: Never

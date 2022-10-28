@@ -218,6 +218,7 @@ spec:
               DISABLED
 
               cat <<EOF > ./ansible/configs/cp4waiops-local-custom.yaml
+              cp4waiops:
               - project: cp4waiops-evtmgr
                 instances:
                 # --------------------------------------------------------------------------------------------------------------------------------------

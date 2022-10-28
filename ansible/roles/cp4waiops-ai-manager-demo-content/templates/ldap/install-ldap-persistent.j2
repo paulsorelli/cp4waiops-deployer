@@ -10,7 +10,7 @@ spec:
   resources:
     requests:
       storage: 32Mi
-  storageClassName: {{ WAIOPS_STORAGE_CLASS_FILE }}
+  storageClassName: {{ storage_class_file }}
   volumeMode: Filesystem
 ---
 apiVersion: v1
@@ -24,7 +24,7 @@ spec:
   resources:
     requests:
       storage: 32Mi
-  storageClassName: {{ WAIOPS_STORAGE_CLASS_FILE }}
+  storageClassName: {{ storage_class_file }}
   volumeMode: Filesystem
 ---
 # Source: openldap/templates/openldap.yaml

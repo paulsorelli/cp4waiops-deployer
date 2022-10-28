@@ -107,7 +107,7 @@ spec:
               
               cat <<EOF > ./ansible/configs/cp4waiops-local-custom.yaml
               cp4waiops:
-              #- project: cp4waiops
+              - project: cp4waiops
               #  instances:
               #  # --------------------------------------------------------------------------------------------------------------------------------------
               #  # CP4WAIOPS AI Manager

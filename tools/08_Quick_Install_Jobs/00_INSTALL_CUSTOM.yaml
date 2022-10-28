@@ -318,7 +318,7 @@ spec:
               echo " ✅ DONE"
               echo "*****************************************************************************************************************************"
 
-              sleep 60000 # heep the pod running by XXXX seconds
+              sleep 60000 # keep the pod running by XXXX seconds
 
           env:
           - name: INSTALL_REPO

@@ -343,6 +343,7 @@ spec:
               #IBM CLoud storage_class_block: rook-cephfs                     # FYRE
               #IBM CLoud storage_class_block: nfs-client                      # TEC                     
           - name: ENTITLED_REGISTRY_KEY
-            value : "<REGISTRY_TOKEN>"
+            #value : "<REGISTRY_TOKEN>"
+            value : "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJJQk0gTWFya2V0cGxhY2UiLCJpYXQiOjE2MjI1NzMwOTYsImp0aSI6ImU5M2MyMGRkZTk5NjQ5YzRiZDc5ZjNkMjAwODFjZjU1In0.7pdfJcU-yNjbqTT3RchrZF1eAOAyD2H1bKHPsxldtmg"
       restartPolicy: Never
   backoffLimit: 4

@@ -22,7 +22,7 @@
 #
 #  - IBM Operator
 #  - AI Manager
-#  - Demo Content
+#  - AI Manager Demo Content
 #     - OpenLDAP & Register with AI Manager
 #     - RobotShop Demo App
 #     - Demo Service Account 
@@ -40,7 +40,11 @@
 #     - External Routes (Flink, Topology, ...)
 #     - Disables ASM Service match rule 
 #     - Create Policy Creation for Stories and Runbooks 
-
+#  - Event Manager
+#  - Event Manager Demo Content
+#  - Infra Management
+#  - Addons
+#  - Turbonomic
 # ---------------------------------------------------------------------------------------------------------------------------------------------------"
 # ---------------------------------------------------------------------------------------------------------------------------------------------------"
 
@@ -214,7 +218,6 @@ spec:
 
 
 
-
               - project: cp4waiops-evtmgr
                 instances:
                 # --------------------------------------------------------------------------------------------------------------------------------------
@@ -237,7 +240,6 @@ spec:
 
 
 
-
               - project: cp4waiops-infra
                 instances:
                 # --------------------------------------------------------------------------------------------------------------------------------------
@@ -249,7 +251,6 @@ spec:
                   # Version of the catalog subscription
                   subscription_channel: v3.3
                   #subscription_channel: 3.4-dev
-
 
 
 
@@ -278,26 +279,13 @@ spec:
               # --------------------------------------------------------------------------------------------------------------------------------------
               # *************************************************************************************************************************************************
 
-
               # --------------------------------------------------------------------------------------------------------------------------------------
               # CP4WAIOPS Storage Classes
               # --------------------------------------------------------------------------------------------------------------------------------------
 
               # Override the Storage Class auto detection (not_configured, ibmc-file-gold-gid, rook-cephfs, nfs-client, ...)
               storage_class_file: $WAIOPS_STORAGE_CLASS_FILE        # LOCAL
-              #storage_class_file: ibmc-file-gold-gid               # ROKS
-              #storage_class_file: ocs-storagecluster-cephfs        # ODF
-              #storage_class_file: ibmc-vpc-block-10iops-tier       # IBM VPC
-              #storage_class_file: rook-cephfs                      # FYRE
-              #storage_class_file: nfs-client                       # TEC
               storage_class_block: $WAIOPS_STORAGE_CLASS_BLOCK      # LOCAL
-              #storage_class_block: ibmc-block-gold                 # ROKS
-              #storage_class_block: ocs-storagecluster-ceph-rbd     # ODF
-              #storage_class_block: ibmc-vpc-block-10iops-tier      # IBM VPC
-              #storage_class_block: rook-cephfs                     # FYRE
-              #storage_class_block: nfs-client                      # TEC
-
-
 
               # --------------------------------------------------------------------------------------------------------------------------------------
               # CP4WAIOPS Pull Registires
@@ -312,9 +300,6 @@ spec:
               EOF
 
 
-
-
-
               echo "------------------------------------------------------------------------------------------------------------------------------"
               echo " 🚀 Prepare Ansible"
               ansible-galaxy collection install community.kubernetes:1.2.1
@@ -323,8 +308,6 @@ spec:
               pip install openshift pyyaml kubernetes 
               echo ""
               echo ""
-
-
 
               echo "------------------------------------------------------------------------------------------------------------------------------"
               echo " 🚀 Starting Installation"
@@ -335,21 +318,30 @@ spec:
               echo " ✅ DONE"
               echo "*****************************************************************************************************************************"
 
-
-
-              sleep 60000
+              sleep 60000 # heep the pod running by XXXX seconds
 
           env:
           - name: INSTALL_REPO
             value : "https://github.com/paulsorelli/cp4waiops-deployer.git"
           - name: CONFIG
-            #value : "./configs/cp4waiops-roks-aimanager-all-34.yaml"
             value : "./configs/cp4waiops-local-custom.yaml"
-            # The pull token for cp.icr.com from https://myibm.ibm.com/products-services/containerlibrary
+              # The pull token for cp.icr.com from https://myibm.ibm.com/products-services/containerlibrary
           - name: WAIOPS_STORAGE_CLASS_FILE
-            value: "nfs-local-sc"
+            value: "nfs-local-sc" # specify the name for a custom SorageClass 
+              #Auto Detection: automatic
+              #IBM CLoud storage_class_file: ibmc-file-gold-gid               # ROKS
+              #IBM CLoud storage_class_file: ocs-storagecluster-cephfs        # ODF
+              #IBM CLoud storage_class_file: ibmc-vpc-block-10iops-tier       # IBM VPC
+              #IBM CLoud storage_class_file: rook-cephfs                      # FYRE
+              #IBM CLoud storage_class_file: nfs-client                       # TEC
           - name: WAIOPS_STORAGE_CLASS_BLOCK
-            value: "nfs-local-sc"                      
+            value: "nfs-local-sc" # specify the name for a custom SorageClass 
+              #Auto Detection: automatic 
+              #IBM CLoud storage_class_block: ibmc-block-gold                 # ROKS
+              #IBM CLoud storage_class_block: ocs-storagecluster-ceph-rbd     # ODF
+              #IBM CLoud storage_class_block: ibmc-vpc-block-10iops-tier      # IBM VPC
+              #IBM CLoud storage_class_block: rook-cephfs                     # FYRE
+              #IBM CLoud storage_class_block: nfs-client                      # TEC                     
           - name: ENTITLED_REGISTRY_KEY
             value : "<REGISTRY_TOKEN>"
       restartPolicy: Never

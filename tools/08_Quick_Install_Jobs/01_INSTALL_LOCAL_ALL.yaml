@@ -105,8 +105,6 @@ spec:
               echo ""
               echo ""
 
-
-
               echo "------------------------------------------------------------------------------------------------------------------------------"
               echo " 🚀 Prepare Ansible"
               ansible-galaxy collection install community.kubernetes:1.2.1
@@ -115,8 +113,6 @@ spec:
               pip install openshift pyyaml kubernetes 
               echo ""
               echo ""
-
-
 
               echo "------------------------------------------------------------------------------------------------------------------------------"
               echo " 🚀 Starting Installation"
@@ -127,8 +123,6 @@ spec:
               echo " ✅ DONE"
               echo "*****************************************************************************************************************************"
 
-
-
               sleep 60000
               
               
@@ -136,7 +130,7 @@ spec:
           - name: INSTALL_REPO
             value : "https://github.com/paulsorelli/cp4waiops-deployer.git"
           - name: CONFIG
-            value : "./configs/cp4waiops-local-eventmanager-all.yaml"
+            value : "./configs/cp4waiops-local-all-35.yaml"
               # The pull token for cp.icr.com from https://myibm.ibm.com/products-services/containerlibrary
           - name: WAIOPS_STORAGE_CLASS_FILE
             value: "nfs-local-sc" # specify the name for a custom SorageClass 

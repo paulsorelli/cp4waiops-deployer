@@ -116,7 +116,7 @@ spec:
 
               echo "------------------------------------------------------------------------------------------------------------------------------"
               echo " 🚀 Starting Installation"
-              ansible-playbook ./ansible/00_cp4waiops-install.yaml -e config_file_path="$CONFIG" -e CP_ENTITLEMENT_KEY=$ENTITLED_REGISTRY_KEY -e WAIOPS_STORAGE_CLASS_FILE=$WAIOPS_STORAGE_CLASS_FILE -e WAIOPS_STORAGE_CLASS_BLOCK=$WAIOPS_STORAGE_CLASS_BLOCK
+              ansible-playbook ./ansible/00_cp4waiops-install.yaml -e config_file_path="$CONFIG" -e CP_ENTITLEMENT_KEY=$ENTITLED_REGISTRY_KEY 
               echo ""
               echo ""
               echo "*****************************************************************************************************************************"

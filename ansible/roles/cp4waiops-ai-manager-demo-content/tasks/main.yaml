@@ -70,7 +70,7 @@
     
 
 
-- name:  🟢 Installation Parameters
+- name:  🟢 INITILIAZATION - Installation Parameters
   debug:
     msg:
     - "***********************************************************************************************"
@@ -83,12 +83,14 @@
     - "     💾 Storage Class InfraManagement:     {{config_file.storage_class_file}}"
     - "-----------------------------------------------------------------------------------------------"
     - "  📥 TRAINING"
+    - "     ✅ Train Anomaly Models:              {{current_cp4waiops_feature.train_models}}"
     - "     ✅ Train Log Anomaly Models:          {{current_cp4waiops_feature.train_models_logs}}"
-    - "     ✅ Train Metric Anomaly Models:       {{current_cp4waiops_feature.train_models_metrics}}"
     - "     ✅ Train Similar Incidents Models:    {{current_cp4waiops_feature.train_models_snow}}"
+    - "     ✅ Train Metric Anomaly Models:       {{current_cp4waiops_feature.train_moels_metrics}}"
     - "-----------------------------------------------------------------------------------------------"
     - "  📥 TOPOLOGY"
     - "     🈸 Install RobotShop Application:     {{current_cp4waiops_feature.install_robotshop}}"
+    - "     ✅ Create RobotShop topology:         {{current_cp4waiops_feature.create_topology}}"
     - "     🛠️ Create RobotShop overlay topology: {{current_cp4waiops_feature.install_robotshop_topology}}"
     - "-----------------------------------------------------------------------------------------------"
     - "  📥 RUNBOOKS"
@@ -104,7 +106,8 @@
     - "     🔐 Slack Password:                    {{current_cp4waiops_feature.demoui_slack_pwd}}"
     - "     👩‍💻 AI Manager Demo User:              {{current_cp4waiops_feature.demoui_aimanager_demo_user}}"
     - "     🔐 AI Manager Demo Password:          {{current_cp4waiops_feature.demoui_aimanager_demo_pwd}}"
-    - "     ❗ Admin Mode:                        {{current_cp4waiops_feature.demoui_admin_mode}}"
+    - "     ❗ Admin Mode:                         {{current_cp4waiops_feature.demoui_admin_mode}}"
+    - "     ❗ Simulation Mode:                    {{current_cp4waiops_feature.demoui_simulation_mode}}"
     - "-----------------------------------------------------------------------------------------------"
     - "  📥 OUTPUT"
     - "     🔐 Pring Logins:                      {{current_cp4waiops_feature.print_logins}}"
@@ -115,6 +118,7 @@
     - "     🌏 LDAP Domain:                       {{current_cp4waiops_feature.ldap_domain}}"
     - "     🌏 LDAP Base:                         {{current_cp4waiops_feature.ldap_base}}"
     - "     🔐 LDAP Admin Password:               {{current_cp4waiops_feature.ldap_admin_password}}"
+    - "     🔐 LDAP Namespace:                    {{current_cp4waiops_feature.ldap_namespace}}"
     - "-----------------------------------------------------------------------------------------------"
     - "  📥 MISC PARAMETERS"
     - "     🌏 Create external routes:            {{current_cp4waiops_feature.create_external_routes}}"

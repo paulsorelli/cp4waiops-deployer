@@ -12,17 +12,17 @@
     export currentDate=$(date +%Y-%m-%d_%H:%M)
     echo "---------------------------------------------------------------------------------------------------------------------------------------------------" >> ../install_{{current_cp4waiops_feature.kind}}.log
     echo $currentDate" - "$USER" - "$MESSAGE  >> ../install_{{current_cp4waiops_feature.kind}}.log
-  ignore_errors: yes
+  ignore_errors: true
 
 
 
 - name: 🌏 DEMO-UI - Get DEMO UI LOGINS
   shell: |
     export WAIOPS_NAMESPACE=$(oc get po -A|grep aiops-orchestrator-controller |awk '{print$1}')
-    export DEMOUI_ROUTE=$(oc get route -n {{ current_cp4waiops_cluster.project }} waiops-demo-ui-python -o jsonpath={.spec.host})
+    export DEMOUI_ROUTE=$(oc get routes -n $WAIOPS_NAMESPACE-demo-ui $WAIOPS_NAMESPACE-demo-ui  -o jsonpath="{['spec']['host']}")
     echo "                🌏 URL:      http://$DEMOUI_ROUTE"
     echo ""
-    echo "                🔐 Token:    $(oc get cm -n {{ current_cp4waiops_cluster.project }} demo-ui-python-config -o jsonpath='{.data.TOKEN}' && echo)"
+    echo "                🔐 Token:    $(oc get cm -n $WAIOPS_NAMESPACE-demo-ui $WAIOPS_NAMESPACE-demo-ui-config -o jsonpath='{.data.TOKEN}')"
 
     export URL=http://$DEMOUI_ROUTE
     if [ -x "$(command -v open)" ]; then
@@ -36,7 +36,7 @@
         fi
       fi
     fi
-  ignore_errors: yes
+  ignore_errors: true
   register: LOGINS
 
 
@@ -50,12 +50,12 @@
     export currentDate=$(date +%Y-%m-%d_%H:%M)
     echo "---------------------------------------------------------------------------------------------------------------------------------------------------" >> ../install_{{current_cp4waiops_feature.kind}}.log
     echo "---------------------------------------------------------------------------------------------------------------------------------------------------" >> ../install_{{current_cp4waiops_feature.kind}}.log
-    appURL=$(oc get routes -n $WAIOPS_NAMESPACE cp4waiops-demo-ui  -o jsonpath="{['spec']['host']}")|| true
-    appToken=$(oc get cm -n $WAIOPS_NAMESPACE cp4waiops-demo-ui-config -o jsonpath='{.data.TOKEN}')
+    appURL=$(oc get routes -n $WAIOPS_NAMESPACE-demo-ui cp4waiops-demo-ui  -o jsonpath="{['spec']['host']}")|| true
+    appToken=$(oc get cm -n $WAIOPS_NAMESPACE-demo-ui cp4waiops-demo-ui-config -o jsonpath='{.data.TOKEN}')
     echo "            📥 Demo UI:"     >> ../install_{{current_cp4waiops_feature.kind}}.log
     echo "    "   >> ../install_{{current_cp4waiops_feature.kind}}.log
     echo "                🌏 URL:           http://$appURL/"  >> ../install_{{current_cp4waiops_feature.kind}}.log
     echo "                🔐 Token:         $appToken"  >> ../install_{{current_cp4waiops_feature.kind}}.log
     echo "---------------------------------------------------------------------------------------------------------------------------------------------------" >> ../install_{{current_cp4waiops_feature.kind}}.log
     echo "---------------------------------------------------------------------------------------------------------------------------------------------------" >> ../install_{{current_cp4waiops_feature.kind}}.log
-  ignore_errors: yes
+  ignore_errors: true

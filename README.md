@@ -45,7 +45,7 @@ Please refer to the official IBM Documentation for production ready installation
 ## 🚀 Demo Installation
 
 
-🐥 [Quick Install](https://github.com/niklaushirt/cp4waiops-deployer#-1-quick-install)
+🐥 [Quick Install](https://github.com/paulsorelli/cp4waiops-deployer#-1-quick-install)
 
 🚀 [Demo the Solution](#2-demo-the-solution)
 
@@ -525,7 +525,7 @@ Incidents are being created by using the high level APIs in order to simulate a 
 Clone the GitHub Repository
 
 ```
-git clone https://github.com/niklaushirt/cp4waiops-deployer.git
+git clone https://github.com/paulsorelli/cp4waiops-deployer.git
 ```
 
 

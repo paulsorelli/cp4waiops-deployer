@@ -8,7 +8,7 @@
 
 - name: 🩹 PATCH - Restart Demo UI
   shell: |
-    oc delete pod $(oc get po -n cp4waiops|grep waiops-demo-ui-python|awk '{print$1}') -n cp4waiops --ignore-not-found
+    oc delete pod $(oc get po -n cp4waiops-demo-ui |grep cp4waiops-demo-ui|awk '{print$1}') -n cp4waiops-demo-ui --ignore-not-found
   ignore_errors: yes
 
 

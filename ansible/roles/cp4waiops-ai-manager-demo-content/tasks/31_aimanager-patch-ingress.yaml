@@ -125,7 +125,7 @@
 - name: 🌏 CERTIFICATES - Patch AutomationUIConfig Certificates
   debug: 
     var: certificate_patch
-    #verbosity: 2
+    verbosity: 2
 
 
 # --------------------------------------------------------------------------------------------------------------------------------------

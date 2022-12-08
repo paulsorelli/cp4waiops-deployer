@@ -20,7 +20,7 @@ global_config:
 
 
 openshift:
-- name: "lab133"
+- name: "ocp"
   ocp_version: "4.10"
   cluster_name: "ocp"
   domain_name: lab133.ngsc.kozow.com

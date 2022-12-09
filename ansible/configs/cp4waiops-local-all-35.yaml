@@ -251,13 +251,13 @@ cp4waiops:
   # --------------------------------------------------------------------------------------------------------------------------------------
   - name: cp4waiops-instana
     kind: Instana
-    install: true
+    install: false
     version: 235-5
 
     # ---------------------------------------------------------------------
     # INSTANA LICENSE
-    sales_key: 'pYBDY35fSWqriEAgMRSV4w'
-    agent_key: 'q69b6iufRLKiMe1qrgt7vw'
+    sales_key: 'NONE'
+    agent_key: 'NONE'
 
     # ---------------------------------------------------------------------
     # INSTANA ADMIN LOGIN

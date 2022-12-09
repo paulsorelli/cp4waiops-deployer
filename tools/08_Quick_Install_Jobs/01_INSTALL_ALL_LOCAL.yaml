@@ -139,7 +139,7 @@ spec:
 
               while true
               do
-                sleep 60000
+                sleep 180000
               done
 
           env:

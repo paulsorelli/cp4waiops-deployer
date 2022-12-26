@@ -541,9 +541,9 @@ spec:
           - name: ENTITLED_REGISTRY_KEY
             value : "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJJQk0gTWFya2V0cGxhY2UiLCJpYXQiOjE2MjI1NzMwOTYsImp0aSI6ImU5M2MyMGRkZTk5NjQ5YzRiZDc5ZjNkMjAwODFjZjU1In0.7pdfJcU-yNjbqTT3RchrZF1eAOAyD2H1bKHPsxldtmg"
           - name: INSTANA_SALES_KEY
-            value : "NONE"
+            value : "pYBDY35fSWqriEAgMRSV4w"
           - name: INSTANA_AGENT_KEY
-            value : "NONE"
+            value : "q69b6iufRLKiMe1qrgt7vw"
           - name: TURBO_LICENSE
             value : "NONE"
       restartPolicy: Never

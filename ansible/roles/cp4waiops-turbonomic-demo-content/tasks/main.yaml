@@ -188,9 +188,9 @@
 # ---------------------------------------------------------------------------------------------------------------------------------------------------"
 # INSTALL TURBONOMIC DEMO CONTENT
 # ---------------------------------------------------------------------------------------------------------------------------------------------------"
-# Install TURBONOMIC
+# Install TURBONOMIC DEMO CONTENT
 - name: 📥 Install Turbonomic
-  include_tasks: 10_addons-turbonomic-demo-content.yaml
+  include_tasks: 10_addons-turbonomic-demo-content-lic_loaded.yaml
 
 
 # Update AI Manager Cards
